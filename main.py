@@ -121,6 +121,7 @@ def process_movies(db_path):
     FROM movies 
     LEFT JOIN roles ON movies.id = roles.movie_id 
     WHERE roles.movie_id IS NULL
+    LIMIT 200
     """)
     movie_ids = cursor.fetchall()
 
